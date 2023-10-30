@@ -236,9 +236,16 @@ require('lazy').setup({
 
 -- Set highlight on search
 vim.o.hlsearch = false
+vim.o.incsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
+
+-- Make line numbers relative
+vim.wo.relativenumber = true
+
+-- Minimal number of lines for the cursor
+vim.wo.scrolloff = 8
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -253,6 +260,9 @@ vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
+
+-- Undo history dir
+vim.o.undodir = os.getenv('HOME') .. '/.nvim/undodir'
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
